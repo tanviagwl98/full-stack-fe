@@ -5,3 +5,7 @@ Note: Work with documentation
 -  CSS - Tailwind, Daisyui
 
 - Using Navbar from Daisy UI
+
+- Routing using react-router-dom
+
+- Created the page with body footer and navbar
