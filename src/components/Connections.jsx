@@ -28,7 +28,7 @@ import { addConnections } from "../utils/connectionSlice"
                 <div className='my-8'>
                     {connectionData.map((connection) => {
                         return (
-                            <div className="flex p-4 my-4 border rounded-lg bg-base-300 w-1/2 mx-auto">
+                            <div key={connection._id} className="flex p-4 my-4 border rounded-lg bg-base-300 w-1/2 mx-auto">
                                 <div>
                                     <img alt="user" 
                                     className="w-20 h-20 rounded-full" 
