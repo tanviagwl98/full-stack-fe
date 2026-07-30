@@ -6,6 +6,7 @@ import { removeUser } from "../utils/userSlice"
 
 export default function Navbar() {
   const user = useSelector((store) => store.user)
+  console.log(user)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleLogout = async() =>{
@@ -32,7 +33,7 @@ export default function Navbar() {
       <div className="w-10 rounded-full">
         <img
           alt="Tailwind CSS Navbar component"
-          src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+          src={user.photoUrl || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"} />
       </div>
     </div>
     <ul

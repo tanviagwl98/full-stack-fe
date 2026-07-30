@@ -19,7 +19,6 @@ export default function Body() {
       if(err.status === 401){
         navigate("/login")
       }
-      console.log("Something went wrong")
     }
   }
 
