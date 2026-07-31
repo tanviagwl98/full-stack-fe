@@ -17,3 +17,6 @@ Note: Work with documentation
 
 - Install Redux Toolkit
 - Setup Redux store, and slices
+
+FE - http://3.25.119.234/
+BE - http://3.25.119.234:7777/
