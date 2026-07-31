@@ -18,9 +18,6 @@ Note: Work with documentation
 - Install Redux Toolkit
 - Setup Redux store, and slices
 
-FE - http://3.25.119.234/
-BE - http://3.25.119.234:7777/
-
 # Deployment
 
 - Signup on AWS 
@@ -50,8 +47,9 @@ BE - http://3.25.119.234:7777/
     - restart nginx - sudo systemctl restart nginx
     - Modify the BASEURL in frontend project to "/api"
 Ngxinx config:
-    Frontend = http://43.204.96.49/
-    Backend = http://43.204.96.49:7777/
+    FE - http://3.25.119.234/
+    BE - http://3.25.119.234:7777/ or http://3.25.119.234/api/
+
 
     Domain name = devtinder.com => 43.204.96.49
 
@@ -60,7 +58,8 @@ Ngxinx config:
 
     nginx config : 
 
-    server_name 43.204.96.49;
+    server_name http://3.25.119.234/
+;
 
     location /api/ {
         proxy_pass http://localhost:7777/;  # Pass the request to the Node.js app
