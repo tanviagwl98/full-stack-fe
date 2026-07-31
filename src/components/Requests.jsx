@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import { BASE_URL } from '../utils/constants'
 import { useDispatch, useSelector } from 'react-redux'
-import { addRequest } from "../utils/requestSlice"
+import { addRequest, removeRequest } from "../utils/requestSlice"
 
 const Requests = () => {
         const requests = useSelector((store) => store.request)
@@ -16,18 +16,30 @@ const Requests = () => {
             }
         }
 
+        const reviewRequest = async(status, id) => {
+          try {
+            const res = await axios.post(
+              BASE_URL + "/request/review/" + status + "/" + id ,
+              {},
+               { withCredentials: true })
+            dispatch(removeRequest(id))
+        } catch (err) {
+            console.log(err)
+        }
+
+        }
         useEffect(() => {
             fetchRequest()
         }, [])
 
         if (!requests) return
-        if (requests.length === 0) return <div>No Requests Found</div>
+        if (requests.length === 0) return (<div>No Requests Found</div>)
 
         return (
             <div className='text-center my-10'>
                 <h1 className='text-bold text-white text-4xl'>Requests</h1>
                 <div className='my-8'>
-                    {requests.map((connection) => {
+                    {requests.length> 0 && requests.map((connection) => {
                         return (
                             <div key={connection._id} className="flex justify-between items-center p-4 my-4 border rounded-lg bg-base-300 w-2/3 mx-auto">
                                 <div>
@@ -41,8 +53,8 @@ const Requests = () => {
                                     <p>About is missing</p>
                                 </div>
                                 <div className='mx-2 py-2'>
-                                <button className="btn btn-primary m-2">Reject</button>
-                                <button className="btn btn-secondary m-2">Accepted</button>
+                                <button className="btn btn-primary m-2" onClick={() => {reviewRequest("rejected", connection._id)}}>Reject</button>
+                                <button className="btn btn-secondary m-2" onClick={() => {reviewRequest("accepted", connection._id)}}>Accept</button>
                                 </div>
                             </div>
 
