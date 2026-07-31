@@ -10,10 +10,8 @@ const Feed = () => {
   const dispatch = useDispatch()
 
   const fetchFeedData = async () => {
-    debugger
     if (feed?.length > 0) return
     try {
-      debugger
       const res = await axios.get(BASE_URL + "/feed", {withCredentials:true})
       dispatch(addFeed(res.data))
     }
@@ -23,7 +21,6 @@ const Feed = () => {
   }
 
   useEffect(() => {
-    debugger
     fetchFeedData()
   }, [])
 
