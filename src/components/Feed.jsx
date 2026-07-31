@@ -18,16 +18,14 @@ const Feed = () => {
       console.log(err)
     }
   }
-
   useEffect(() => {
     fetchFeedData()
   }, [])
-
+  if(feed.length <=0) return <h1 className='flex my-10 justify-center'>No New Users Found</h1>
   return (
     feed && (
     <div className='flex justify-center my-10 flex-wrap'>
-      {feed && feed.map((user) => <UserCard user={user}/>)}
-        
+     <UserCard user={feed[0]} />
     </div>
     )
   )
