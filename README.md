@@ -23,7 +23,7 @@ Note: Work with documentation
 - Signup on AWS 
 - Launch instance
 - chmod 400 <secret>.pem
-- ssh -i "devTinder-secret.pem" ubuntu@ec2-43-204-96-49.ap-south-1.compute.amazonaws.com
+- ssh -i "pem_filename" ubuntu@ec2-43-204-96-49.ap-south-1.compute.amazonaws.com
 - Install Node version 16.17.0
 - Git clone
 - Frontend    
@@ -49,12 +49,6 @@ Note: Work with documentation
 Ngxinx config:
     FE - http://3.25.119.234/
     BE - http://3.25.119.234:7777/ or http://3.25.119.234/api/
-
-
-    Domain name = devtinder.com => 43.204.96.49
-
-    Frontend = devtinder.com
-    Backend = devtinder.com:7777 => devtinder.com/api
 
     nginx config : 
 
