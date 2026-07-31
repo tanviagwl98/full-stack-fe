@@ -45,6 +45,8 @@ export default function Navbar() {
       </li>
       <li><Link to="/connections">Connections</Link></li>
       <li><Link to="/requests">Requests</Link></li>
+      <li><Link to="/premium">Premium</Link></li>
+      <li><Link to="/chat">Chat</Link></li>
       <li><a onClick={() => {handleLogout()}}>Logout</a></li>
     </ul>
   </div>

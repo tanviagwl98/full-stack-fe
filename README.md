@@ -52,7 +52,7 @@ Ngxinx config:
 
     nginx config : 
 
-    server_name http://3.25.119.234/
+    server_name 3.25.119.234/
 ;
 
     location /api/ {
