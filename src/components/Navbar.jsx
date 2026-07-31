@@ -6,11 +6,9 @@ import { removeUser } from "../utils/userSlice"
 
 export default function Navbar() {
   const user = useSelector((store) => store.user)
-  console.log(user)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleLogout = async() =>{
-    debugger
     try{
       const res = await axios.post(BASE_URL + "/logout", {}, {withCredentials:true})
       dispatch(removeUser())

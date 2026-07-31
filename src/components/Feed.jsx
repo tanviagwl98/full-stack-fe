@@ -6,11 +6,14 @@ import {addFeed} from "../utils/feedSlice"
 import UserCard from './UserCard'
 const Feed = () => {
   const feed = useSelector((store) => store.feed)
+  console.log(feed)
   const dispatch = useDispatch()
 
   const fetchFeedData = async () => {
-    if (feed) return
+    debugger
+    if (feed?.length > 0) return
     try {
+      debugger
       const res = await axios.get(BASE_URL + "/feed", {withCredentials:true})
       dispatch(addFeed(res.data))
     }
@@ -18,10 +21,13 @@ const Feed = () => {
       console.log(err)
     }
   }
+
   useEffect(() => {
+    debugger
     fetchFeedData()
   }, [])
-  if(feed.length <=0) return <h1 className='flex my-10 justify-center'>No New Users Found</h1>
+
+  if(feed?.length === 0) return <h1 className='flex my-10 justify-center'>No New Users Found</h1>
   return (
     feed && (
     <div className='flex justify-center my-10 flex-wrap'>

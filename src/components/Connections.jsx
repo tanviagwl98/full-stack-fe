@@ -20,7 +20,7 @@ import { addConnections } from "../utils/connectionSlice"
         }, [])
 
         if (!connectionData) return
-        if (connectionData.length === 0) return <div>No Connections Found</div>
+        if (connectionData.length === 0) return <div className="flex justify-center my-10">No Connections Found</div>
 
         return (
             <div className='text-center my-10'>

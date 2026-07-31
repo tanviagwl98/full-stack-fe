@@ -15,6 +15,8 @@ const EditProfile = ({ userData }) => {
     const [error, setError] = useState("")
     const [photoUrl, setPhotoUrl] = useState(userData.photoUrl || "")
     const [showToaster, setShowToaster] = useState(false)
+    const [_id] = useState(userData._id )
+    
     const dropdownRef = useRef(null)
     const dispatch = useDispatch()
     const handleSaveProfile = async () => {
