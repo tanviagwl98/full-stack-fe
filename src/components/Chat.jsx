@@ -81,7 +81,7 @@ const Chat = () => {
     <div className='flex-1 overflow-scroll p-5'>
       {receivedMessages.map((msg, index) => {
         return(
-          <div key={index} className="chat chat-start">
+          <div key={index} className={"chat " + (user.firstName== msg.firstName ? "chat-start" : "chat-end")}>
             <div className="chat-header">
                 {msg.firstName} {msg.lastName}
                 <time className="text-xs opacity-50">{msg?.timeMessageReceived}</time>
