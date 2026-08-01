@@ -83,7 +83,7 @@ const Chat = () => {
         return(
           <div key={index} className="chat chat-start">
             <div className="chat-header">
-                {msg.firstName}
+                {msg.firstName} {msg.lastName}
                 <time className="text-xs opacity-50">{msg?.timeMessageReceived}</time>
             </div>
             <div className="chat-bubble">{msg.text}</div>
