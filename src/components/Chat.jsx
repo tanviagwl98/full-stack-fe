@@ -87,7 +87,6 @@ const Chat = () => {
                 <time className="text-xs opacity-50">{msg?.timeMessageReceived}</time>
             </div>
             <div className="chat-bubble">{msg.text}</div>
-            <div className="chat-footer opacity-50">Seen</div>
           </div>
         )
       })}
