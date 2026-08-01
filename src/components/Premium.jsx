@@ -9,7 +9,6 @@ const Premium = () => {
   }, []);
 
   const verifyPremiumUser = async () => {
-    debugger
     const res = await axios.get(BASE_URL + "/premium/verify", {
       withCredentials: true,
     });
